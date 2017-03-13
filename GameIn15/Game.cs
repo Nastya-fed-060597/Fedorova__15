@@ -10,12 +10,12 @@ namespace PlayGame
     {
         public readonly int[,] field;
 
-        public Game(params int [] gets)//первый конструктор 
+        public Game(params int [] gets)
         {
             
-            if (canwedo(gets)) //проверяем может ли из такого массива создать игру
+            if (canwedo(gets)) 
             {
-                //если да то преобразуем поступивший массив(он пока одномерный) в двумерный(поле нашего класса field)
+                
                 int temp = 0;
                 field = new int[Convert.ToInt32(Math.Sqrt(gets.Length)), Convert.ToInt32(Math.Sqrt(gets.Length))];
                 for (int i = 0; i < Math.Sqrt(gets.Length); i++)
@@ -28,10 +28,11 @@ namespace PlayGame
                 }
                 
             }
+      
         }
       
        
-        public bool Shift(int val) //переставляем значения
+        public bool Shift(int val) 
         {
             int i1 = 0;
             int j1 = 0;
@@ -53,7 +54,7 @@ namespace PlayGame
                     }
                 }
             }
-            if ((Math.Abs(i2-i1)+Math.Abs(j2-j1))==1) //проверяем возможно ли поменять нужную цифру с 0,используем для этого разница между координатами(она должна быть равна 1)
+            if ((Math.Abs(i2-i1)+Math.Abs(j2-j1))==1) 
             {
                 field[i1, j1] = val;
                 field[i2, j2] = 0;
@@ -65,7 +66,7 @@ namespace PlayGame
             }
         }
 
-        public bool WIN() //проверка на то выйграна ли игра
+        public bool WIN() 
         {
             bool status = true;
             int[] temper = new int[field.Length];
@@ -89,7 +90,7 @@ namespace PlayGame
             return status;
         }
 
-        private bool canwedo(int[] gets)//проверка на то, что массив нам подходит(содержит только один 0, из него можно создать квадрат)
+        private bool canwedo(int[] gets)
         {
             bool ret=true;
             int gameline =(int) Math.Sqrt(gets.Length);

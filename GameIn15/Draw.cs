@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PlayGame
 {
-    static class Draw //класс для рисования игры
+    static class Draw
     {
         public static void Print(Game game)
         {
@@ -16,7 +16,7 @@ namespace PlayGame
                 for (int j = 0; j < Math.Sqrt(game.field.Length); j++)
                 {
                    
-                    Console.Write(game.field[i,j] + " ");//здесь используется индексатор
+                    Console.Write(game.field[i,j] + " ");
                     
                 }
                 Console.WriteLine();

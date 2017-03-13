@@ -11,12 +11,12 @@ namespace PlayGame
     {
         static void Main(string[] args)
         {
-            //пытаемся создать игру
+   
             {
-                var game = new Game(1,2,3,4,5,6,8,7,0); //создаем игру
-                while (!game.WIN()) //играем пока не достигнем победы
+                var game = new Game(1,2,3,4,5,6,8,7,0); 
+                while (!game.WIN())
                 {
-                    Draw.Print(game); //рисуем игру
+                    Draw.Print(game);
 
                     Console.WriteLine("ВВедите число которое хотите передвинуть");
                     int choise = Convert.ToInt32(Console.ReadLine());
