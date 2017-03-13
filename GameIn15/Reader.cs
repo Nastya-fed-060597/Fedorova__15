@@ -10,12 +10,15 @@ namespace PlayGame
  static   class Reader //класс для считывания значений из файла
     {
         
-       static public string [] read (string path)
+       static public int [] read (string path)
         {
-            return File.ReadAllText(path).Split(',');
-            
-            
-           
+            var stringgets = File.ReadAllText(path).Split(',');
+            var gets = new int[stringgets.Length];
+            for (int i = 0; i < gets.Length; i++)
+            {
+                gets[i] = Convert.ToInt32(stringgets[i]); //преобразуем элементы массива строк в интовские цифры
+            }
+            return gets;
         }
     }
 }

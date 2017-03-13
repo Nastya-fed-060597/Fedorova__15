@@ -10,7 +10,7 @@ namespace PlayGame
     {
         public readonly int[,] field;
 
-        public Game(int [] gets)//первый конструктор 
+        public Game(params int [] gets)//первый конструктор 
         {
             
             if (canwedo(gets)) //проверяем может ли из такого массива создать игру
@@ -28,46 +28,9 @@ namespace PlayGame
                 }
                 
             }
-            else
-            {
-                throw new Exception(); //если массив не подходил, то создаем иссключение
-            }
         }
-        public Game(string [] stringgets) //второй массив для случая,  когда поступает строка
-        {
-            var gets = new int[stringgets.Length];
-            for (int i = 0; i < gets.Length; i++)
-            {
-                gets[i] = Convert.ToInt32(stringgets[i]); //преобразуем элементы массива строк в интовские цифры
-            }
-            if (canwedo(gets))//проверяем получившийся массив на то,  что он нам подойдет
-            {
-                //если да, то преобразуем поступивший массив(он пока одномерный) в двумерный(поле нашего класса field)
-                int temp = 0;
-                field = new int[Convert.ToInt32(Math.Sqrt(gets.Length)), Convert.ToInt32(Math.Sqrt(gets.Length))];
-                for (int i = 0; i < Math.Sqrt(gets.Length); i++)
-                {
-                    for (int j = 0; j < Math.Sqrt(gets.Length); j++)
-                    {
-                        field[i, j] = gets[temp];
-                        temp++;
-                    }
-                }
-            }
-            else
-            {
-                throw new Exception();
-            }
-        }
-
       
-
-        public int this [int x,int y] //индексатор позволяет напрямую обращаться к полю класса, используется в классе reader
-        {
-            get { return field[x, y]; }
-            
-        }
-
+       
         public bool Shift(int val) //переставляем значения
         {
             int i1 = 0;

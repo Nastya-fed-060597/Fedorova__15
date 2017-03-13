@@ -16,7 +16,7 @@ namespace PlayGame
                 for (int j = 0; j < Math.Sqrt(game.field.Length); j++)
                 {
                    
-                    Console.Write(game[i,j] + " ");//здесь используется индексатор
+                    Console.Write(game.field[i,j] + " ");//здесь используется индексатор
                     
                 }
                 Console.WriteLine();
